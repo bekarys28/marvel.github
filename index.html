@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel - Вселенная Героев</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef; 
+            scroll-behavior: smooth;
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #b22234; 
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative; 
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        nav {
+            background-color: #003366; 
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+            transform: scale(1.05); 
+            text-decoration: underline; 
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            max-width: 300px;
+            margin-right: 20px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .profile-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .content {
+            max-width: 600px;
+        }
+
+        h2 {
+            color: #b22234; 
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+            text-align: center;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: auto;
+            height: 250px;
+            margin: 5px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            opacity: 0.8; 
+        }
+
+        .subscribe-form {
+            margin-top: 10px;
+        }
+
+        .subscribe-form input[type="email"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        .subscribe-form button {
+            padding: 10px 20px;
+            background-color: #f1c40f; 
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .subscribe-form button:hover {
+            background-color: #d4ac0d; 
+        }
+
+     
+        .video-gallery {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin: 40px auto;
+            max-width: 900px;
+            border-radius: 10px;
+            color: #e9ecef;
+        }
+        
+        .video-gallery h2 {
+            color: #f1c40f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .video-container iframe {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+            border: 2px solid #b22234;
+            border-radius: 10px;
+        }
+
+    
+        .timeline {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin-top: 40px;
+            max-width: 900px;
+            color: #e9ecef;
+            border-radius: 10px;
+            margin-left: 2cm;
+        }
+
+        .timeline h2 {
+            color: #f1c40f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .timeline-event {
+            margin-bottom: 20px;
+            border-left: 4px solid #b22234;
+            padding-left: 10px;
+        }
+
+        .timeline-event h3 {
+            color: #f1c40f;
+            margin-bottom: 5px;
+        }
+
+        .map-section {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin-top: 40px;
+            max-width: 900px;
+            color: #e9ecef;
+            border-radius: 10px;
+        }
+
+        .map-section h2 {
+            color: #f1c40f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+       
+        .comics-gallery {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin-top: 40px;
+            max-width: 900px;
+            color: #e9ecef;
+            border-radius: 10px;
+            margin-left: 15cm;
+            width: auto;
+            height: 100%;
+        }
+        .comics-gallery a{
+            margin-left: 0.4cm;
+        }
+
+        .comics-gallery h2 {
+            color: #f1c40f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .comics-gallery img {
+            margin-left: 10cm;
+            width: 150px;
+            height: auto;
+            margin: 5px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .comics-gallery img:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+        .hero-generator {
+            
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin-top: 40px;
+            max-width: 900px;
+            color: #e9ecef;
+            border-radius: 10px;
+            text-align: center;
+            margin-left: 3cm;
+            margin-bottom: 1cm;
+        }
+
+        .hero-generator h2 {
+            color: #f1c40f;
+            margin-bottom: 20px;
+        }
+
+        .hero-generator input, .hero-generator button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .hero-generator button {
+            background-color: #b22234;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero-generator button:hover {
+            background-color: #d4ac0d;
+        }
+a{
+    color: #ddd;
+}
+       
+        @media screen and (max-width: 600px) {
+            nav a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            nav .icon {
+                display: block;
+                float: right;
+                cursor: pointer;
+            }
+
+            nav.responsive a {
+                display: block;
+                float: none;
+            }
+        }
+    </style>
+ 
+ 
+ <script>
+    function generateHero() {
+        const name = document.getElementById("heroName").value.trim();
+
+        // Массив с суперспособностями и изображениями мини-персонажей
+        const powers = [
+            { name: "Сверхчеловеческая сила", image: "c:\\Users\\Acer\\Desktop\\web\\superstrenght.jpg" },
+            { name: "Полёт", image: "c:\\Users\\Acer\\Desktop\\web\\flight.jpg" },
+            { name: "Мастер боевых искусств", image: "c:\\Users\\Acer\\Desktop\\web\\martial.jpg" },
+            { name: "Невидимость", image: "c:\\Users\\Acer\\Desktop\\web\\invisble.jpg" },
+            { name: "Контроль над стихиями", image: "c:\\Users\\Acer\\Desktop\\web\\superman.jpg" }
+        ];
+
+        // Проверка, ввёл ли пользователь имя
+        if (!name) {
+            document.getElementById("heroOutput").textContent = "Пожалуйста, введите имя вашего героя!";
+            document.getElementById("heroImage").innerHTML = "";
+            return;
+        }
+
+        // Случайный выбор суперспособности
+        const randomPower = powers[Math.floor(Math.random() * powers.length)];
+
+        // Вывод имени героя и способности
+        document.getElementById("heroOutput").textContent = `${name} обладает способностью: ${randomPower.name}`;
+
+        // Вывод изображения мини-персонажа
+        document.getElementById("heroImage").innerHTML = `
+            <img src="${randomPower.image}" alt="${randomPower.name}" style="width: 150px; height: auto;">
+        `;
+    }
+</script>
+
+</head>
+<body>
+
+<header>
+    <h1>Marvel - Вселенная Героев</h1>
+</header>
+
+<nav>
+    <div class="icon" onclick="toggleMenu()">&#9776;</div>
+    <a href="c:\Users\Acer\Desktop\web\marvel.history.html">О Marvel</a>
+    <a href="c:\Users\Acer\Desktop\web\marvel.hero's.html">Герои</a>
+    <a href="c:\Users\Acer\Desktop\web\marvelfilm.html">Фильмы</a>
+<a href="c:\Users\Acer\Desktop\web\marvel.timeline.html">Таймлайн</a>
+    
+</nav>
+
+<main>
+    <section class="profile-image">
+        <img src="c:\Users\Acer\Desktop\web\marvel.jpeg" alt="Marvel Logo">
+    </section>
+    
+</main>
+
+<h2 id="gallery">Галерея</h2>
+<section class="gallery">
+    <img src="c:\Users\Acer\Desktop\web\444.jpeg" alt="Железный человек" onclick="showInfo('Железный человек')">
+    <img src="c:\Users\Acer\Desktop\web\555.jpeg" alt="Человек-паук" onclick="showInfo('Человек-паук')">
+    <img src="c:\Users\Acer\Desktop\web\тор.jpeg" alt="Мстители" onclick="showInfo('Мстители')">
+    <img src="c:\Users\Acer\Desktop\web\капитан.jpeg" alt="Капитан Америка" onclick="showInfo('Капитан Америка')">
+</section>
+
+
+
+
+<section class="timeline" id="timeline">
+    <h2>Таймлайн Marvel</h2>
+    <div class="timeline-event">
+        <h3>1939</h3>
+        <p>Создание <a href="https://www.marvel.com/comics">Marvel Comics.</a></p>
+    </div>
+    <div class="timeline-event">
+        <h3>2008</h3>
+        <p>Выход фильма <a href="https://www.kinopoisk.ru/film/61237/?utm_referrer=www.google.com">«Железный человек».</a></p>
+    </div>
+    <div class="timeline-event">
+        <h3>2012</h3>
+        <p>Премьера <a href="https://www.kinopoisk.ru/film/263531/">«Мстителей».</a></p>
+    </div>
+</section>
+
+
+
+
+<section class="comics-gallery" id="comics">
+    <h2>Галерея комиксов</h2>
+    <a href="https://www.marvel.com/comics/issue/118738/venom_war_fantastic_four_1_vw_2024_1"><img src="c:\Users\Acer\Desktop\web\clean.jpg" alt="Комикс 1"></a>
+    <a href="https://www.marvel.com/comics/issue/116134/captain_america_2023_14"><img src="c:\Users\Acer\Desktop\web\portrait_uncanny.jpg" alt="Комикс 2"></a>
+    <a href="https://www.marvel.com/comics/issue/114934/iron_man_2024_1"><img src="c:\Users\Acer\Desktop\web\portrait_uncanny (1).jpg" alt="Комикс 3"></a>
+    <a href="https://www.marvel.com/comics/issue/119416/incredible_hulk_2023_18"><img src="c:\Users\Acer\Desktop\web\portrait_uncanny (3).jpg" alt=""></a>
+    <a href="https://www.marvel.com/comics/issue/114560/venom_war_2024_1"><img src="c:\Users\Acer\Desktop\web\portrait_uncanny (2).jpg" alt=""></a>
+</section>
+
+<section class="hero-generator">
+        <h2>Генератор супергероя</h2>
+        <input type="text" id="heroName" placeholder="Введите ваше имя">
+        <button onclick="generateHero()">Создать героя</button>
+        <p id="heroOutput"></p>
+        <div id="heroImage"></div>
+    </section>
+    
+
+<footer>
+    <p>© 2024 Marvel Вселенная - Все права защищены</p>
+    <p>Жазылу үшін email енгізіңіз:</p>
+    <form class="subscribe-form" action="subscribe.php" method="post">
+        <input type="email" placeholder="Email" required>
+     <button type="submit"> <a href="c:\Users\Acer\Desktop\web\web11.html">Жазылу</a></button>
+       <br>
+       <p>Not a member? <a href="C:\Users\Acer\Desktop\web\form9.html">Register here!</a></p>
+    </form>
+</footer>
+
+</body>
+</html>
