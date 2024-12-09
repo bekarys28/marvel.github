@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильмы Marvel</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #101010;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background-color: #010101; 
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #202020;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+
+        nav a:hover {
+            background-color: #e62429;
+            transform: scale(1.1); 
+        }
+
+        audio {
+            display: none;
+        }
+
+        .hero-header {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(45deg, #381516, #101010);
+            animation: gradientAnimation 5s infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-header .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .hero-header h1 {
+            font-size: 3rem;
+            color: #e62429;
+            margin: 0;
+        }
+
+        .hero-header p {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .movies {
+            padding: 20px;
+            background: #202020;
+        }
+
+        .movies h2 {
+            color: #e62429;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .movie-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .movie-card {
+            background: #151515;
+            border: 1px solid #e62429;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #e62429;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .movie-card h3 {
+            color: #e62429;
+            margin: 10px 0;
+        }
+
+        .recommendations {
+            padding: 20px;
+            background: #202020;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .recommendations h2 {
+            color: #e62429;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .recommendation-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .recommendation-card {
+            background: #151515;
+            border: 1px solid #e62429;
+            border-radius: 10px;
+            width: 300px;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .recommendation-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #e62429;
+        }
+
+        .recommendation-card h3 {
+            color: #e62429;
+            margin-bottom: 10px;
+        }
+
+        .recommendation-card p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .table-section {
+            padding: 20px;
+            background: #101010;
+            color: #fff;
+        }
+
+        .table-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .table-section th, .table-section td {
+            border: 1px solid #e62429;
+            padding: 10px;
+        }
+
+        .table-section th {
+            background: #151515;
+            color: #e62429;
+        }
+
+        .table-section td {
+            background: #202020;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #151515;
+            border-top: 2px solid #e62429;
+        }
+
+        @media (max-width: 768px) {
+            .movie-card {
+                width: 150px;
+            }
+
+            .hero-header h1 {
+                font-size: 2rem;
+            }
+
+            .hero-header p {
+                font-size: 1rem;
+            }
+
+            .recommendation-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="marvel-theme.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+
+    <header class="hero-header">
+        <div class="overlay">
+            <h1>Фильмы Marvel</h1>
+            <p>Погрузитесь в кинематографическую вселенную Marvel!</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="c:\Users\Acer\Desktop\web\marvel.html">Главная</a>
+        <a href="c:\Users\Acer\Desktop\web\marvel.history.html">О Marvel</a>
+        <a href="c:\Users\Acer\Desktop\web\marvel.hero's.html">Герои</a>
+        <a href="c:\Users\Acer\Desktop\web\marvelfilm.html">Фильмы</a>
+        <a href="c:\Users\Acer\Desktop\web\marvel.html">Timeline</a>
+    </nav>
+
+    <section class="movies">
+        <h2>Легендарные фильмы</h2>
+        <div class="movie-grid">
+            <div class="movie-card">
+                <img src="avengers.jpg" alt="Мстители">
+                <h3>Мстители</h3>
+                <p>Сбор супергероев против Локи и армии Читаури.</p>
+            </div>
+            <div class="movie-card">
+                <img src="c:\Users\Acer\Desktop\web\IRON1.jpg" alt="Железный человек">
+                <h3>Железный человек</h3>
+                <p>Начало пути Тони Старка к становлению супергероем.</p>
+            </div>
+            <div class="movie-card">
+                <img src="c:\Users\Acer\Desktop\web\BLACKPANTER.jpg" alt="Черная пантера">
+                <h3>Черная пантера</h3>
+                <p>История Т'Чаллы и защиты Ваканды.</p>
+            </div>
+            <div class="movie-card">
+                <img src="c:\Users\Acer\Desktop\web\thooor.jpg" alt="Тор">
+                <h3>Тор</h3>
+                <p>Путешествие бога грома к становлению достойным.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="recommendations">
+        <h2>Рекомендуем посмотреть</h2>
+        <div class="recommendation-grid">
+            <div class="recommendation-card">
+                <h3>Доктор Стрэндж</h3>
+                <p>История выдающегося хирурга, ставшего мастером мистических искусств.</p>
+            </div>
+            <div class="recommendation-card">
+                <h3>Человек-паук: Возвращение домой</h3>
+                <p>Питер Паркер совмещает жизнь школьника и супергероя.</p>
+            </div>
+            <div class="recommendation-card">
+                <h3>Стражи Галактики</h3>
+                <p>Команда разношёрстных героев борется за спасение галактики.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="table-section">
+        <h2>Таблица фильмов</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Бюджет</th>
+                    <th>Сборы</th>
+                    <th>Рейтинг</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Мстители</td>
+                    <td>$220 млн</td>
+                    <td>$1.5 млрд</td>
+                    <td>8.0</td>
+                </tr>
+                <tr>
+                    <td>Железный человек</td>
+                    <td>$140 млн</td>
+                    <td>$585 млн</td>
+                    <td>7.9</td>
+                </tr>
+                <tr>
+                    <td>Черная пантера</td>
+                    <td>$200 млн</td>
+                    <td>$1.3 млрд</td>
+                    <td>7.3</td>
+                </tr>
+                <tr>
+                    <td>Тор</td>
+                    <td>$150 млн</td>
+                    <td>$449 млн</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>Доктор Стрэндж</td>
+                    <td>$165 млн</td>
+                    <td>$677 млн</td>
+                    <td>7.5</td>
+                </tr>
+                <tr>
+                    <td>Человек-паук: Возвращение домой</td>
+                    <td>$175 млн</td>
+                    <td>$880 млн</td>
+                    <td>7.4</td>
+                </tr>
+                <tr>
+                    <td>Стражи Галактики</td>
+                    <td>$170 млн</td>
+                    <td>$773 млн</td>
+                    <td>8.1</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Фильмы Marvel. Все права защищены.</p>
+    </footer>
+</body>
+</html>

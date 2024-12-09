@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймлайн Marvel</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #1c1c1c;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(45deg, #e62429, #6b0e0e);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background: #101010;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #202020;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+
+        nav a:hover {
+            background-color: #e62429;
+            transform: scale(1.1); 
+        }
+
+        .timeline-section {
+            padding: 20px;
+        }
+
+        .timeline-section h2 {
+            color: #e62429;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .timeline-event {
+            background: #252525;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-event:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px #e62429;
+        }
+
+        .timeline-event h3 {
+            color: #e62429;
+            margin-bottom: 10px;
+        }
+
+        .timeline-event p {
+            color: #ccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #101010;
+            border-top: 2px solid #e62429;
+        }
+
+        .announcements {
+            margin-top: 30px;
+            padding: 20px;
+            background: #252525;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            color: #ccc;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .announcements h2 {
+            text-align: center;
+            color: #e62429;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Таймлайн Marvel</h1>
+        <p>Следите за событиями киновселенной Marvel в хронологическом порядке!</p>
+    </header>
+
+    <nav>
+        <a href="c:\Users\Acer\Desktop\web\marvel.html">Главная</a>
+        <a href="c:\Users\Acer\Desktop\web\marvel.hero's.html">Герои</a>
+        <a href="c:\Users\Acer\Desktop\web\marvelfilm.html">Фильмы</a>
+        <a href="c:\Users\Acer\Desktop\web\marvel.timeline.html">Таймлайн</a>
+    </nav>
+
+    <section class="timeline-section">
+        <h2>События Marvel</h2>
+        <div class="timeline">
+            <div class="timeline-event">
+                <h3>2008: Железный человек</h3>
+                <p>Тони Старк создаёт броню и становится супергероем.</p>
+            </div>
+            <div class="timeline-event">
+                <h3>2012: Битва за Нью-Йорк</h3>
+                <p>Мстители объединяются, чтобы остановить Локи и армию Читаури.</p>
+            </div>
+            <div class="timeline-event">
+                <h3>2018: Война бесконечности</h3>
+                <p>Танос собирает Камни Бесконечности и уничтожает половину жизни во вселенной.</p>
+            </div>
+            <div class="timeline-event">
+                <h3>2019: Финал</h3>
+                <p>Мстители возвращают Камни Бесконечности, чтобы исправить последствия щелчка.</p>
+            </div>
+            <div class="timeline-event">
+                <h3>2021: ВандаВижен</h3>
+                <p>Ванда Максимофф создаёт свой идеальный мир, который становится причиной хаоса.</p>
+            </div>
+            <div class="timeline-event">
+                <h3>2024: Секретное вторжение</h3>
+                <p>Скруллы тайно проникают на Землю, угрожая всему человечеству.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="announcements">
+        <h2>Анонсы</h2>
+        <p><strong>Май 2025:</strong> Премьера нового фильма "Мстители: Династия Канга".</p>
+        <p><strong>Ноябрь 2025:</strong> Первый взгляд на "Фантастическую четвёрку".</p>
+        <p><strong>Февраль 2026:</strong> Долгожданный фильм "Дэдпул 3"!</p>
+    </section>
+
+    <footer>
+        <p>© 2024 Таймлайн Marvel. Все права защищены.</p>
+    </footer>
+</body>
+</html>

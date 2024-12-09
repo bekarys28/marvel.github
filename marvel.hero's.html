@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Герои Marvel</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #101010;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #010101; 
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #202020;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+
+        nav a:hover {
+            background-color: #e62429;
+            transform: scale(1.1); 
+        }
+
+        .hero-header {
+            position: relative;
+            background: url('marvel-banner.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-header .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .hero-header h1 {
+            font-size: 3rem;
+            color: #e62429;
+            margin: 0;
+        }
+
+        .hero-header p {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .heroes {
+            padding: 20px;
+            background: #202020;
+        }
+
+        .heroes h2 {
+            color: #e62429;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .hero-card {
+            background: #151515;
+            border: 1px solid #e62429;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 200px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 20px rgba(255, 36, 36, 0.5);
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hero-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .hero-card h3 {
+            color: #e62429;
+            margin: 10px 0;
+        }
+
+        .hero-card p {
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        /* Информация о герое */
+        .hero-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .hero-card:hover .hero-info {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .gallery {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero-card:hover .gallery {
+            display: block;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 300px;
+            margin: 10px;
+            border: 2px solid #e62429;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #151515;
+            border-top: 2px solid #e62429;
+        }
+        .announcements {
+        padding: 20px;
+        background-color: #202020;
+        color: #fff;
+    }
+
+    .announcements ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .announcements li {
+        margin: 10px 0;
+    }
+
+    .announcements strong {
+        color: #e62429;
+    }   
+    
+    .hero-table {
+        padding: 20px;
+        background: #151515;
+        color: white;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1rem;
+    }
+
+    th, td {
+        border: 1px solid #e62429;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #202020;
+        color: #fff;
+    }
+
+    tr:nth-child(even) {
+        background-color: #101010;
+    }
+
+    tr:hover {
+        background-color: #303030;
+    }
+</style>
+
+    </style>
+</head>
+<body>
+    <header class="hero-header">
+        <div class="overlay">
+            <h1>Герои Marvel</h1>
+            <p>Откройте мир легендарных супергероев Marvel!</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="c:\Users\Acer\Desktop\web\marvel.html">Главная</a>
+        <a href="marvelhero.html">О Marvel</a>
+        <a href="c:\Users\Acer\Desktop\web\marvel.hero's.html">Герои</a>
+        <a href="c:\Users\Acer\Desktop\web\marvel.history.html">Фильмы</a>
+        <a href="c:\Users\Acer\Desktop\web\marvel.timeline.html">Timeline</a>
+    </nav>
+
+    <section class="heroes">
+        <h2>Знаменитые герои</h2>
+        <div class="hero-grid">
+            <!-- Капитан Америка -->
+            <div class="hero-card">
+                <img src="captain.jpg" alt="Капитан Америка">
+                <h3>Капитан Америка</h3>
+                <p>Символ свободы, лидер Мстителей.</p>
+                <div class="hero-info">
+                    <h4>Информация о герое:</h4>
+                    <p>Капитан Америка, или Стив Роджерс, был преобразован в суперсолдата во время Второй мировой войны. С момента своего пробуждения из ледяного сна в современную эпоху он стал лидером Мстителей.</p>
+                </div>
+                <div class="gallery">
+                    <img src="c:\Users\Acer\Desktop\web\captain1.jpg" alt="Капитан Америка 1">
+                    <img src="c:\Users\Acer\Desktop\web\captain2.jpg" alt="Капитан Америка 2">
+                </div>
+            </div>
+
+            <!-- Железный человек -->
+            <div class="hero-card">
+                <img src="IROOON.jpg" alt="Железный человек">
+                <h3>Железный человек</h3>
+                <p>Гений, миллиардер, плейбой, филантроп.</p>
+                <div class="hero-info">
+                    <h4>Информация о герое:</h4>
+                    <p>Тони Старк — гениальный инженер и предприниматель, который создал броню Железного Человека для того, чтобы выжить и бороться за справедливость.</p>
+                </div>
+                <div class="gallery">
+                    <img src="c:\Users\Acer\Desktop\web\ironman6.jpg" alt="Железный человек 1">
+                    <img src="c:\Users\Acer\Desktop\web\IRON1.jpg" alt="Железный человек 2">
+                </div>
+            </div>
+
+            <!-- Человек-Паук -->
+            <div class="hero-card">
+                <img src="c:\Users\Acer\Desktop\web\spider2.jpg" alt="Человек-Паук">
+                <h3>Человек-Паук</h3>
+                <p>Юный герой с невероятными способностями.</p>
+                <div class="hero-info">
+                    <h4>Информация о герое:</h4>
+                    <p>Питер Паркер, обычный подросток, который после укуса радиоактивного паука приобретает способности, такие как лазание по стенам и сверхсила.</p>
+                </div>
+                <div class="gallery">
+                    <img src="c:\Users\Acer\Desktop\web\spiderman.jpg" alt="Человек-Паук 1">
+                    <img src="c:\Users\Acer\Desktop\web\spider.jpg" alt="Человек-Паук 2">
+                </div>
+            </div>
+
+            <!-- Халк -->
+            <div class="hero-card">
+                <img src="hulk.jpg" alt="Халк">
+                <h3>Халк</h3>
+                <p>Могущественный и неуязвимый герой.</p>
+                <div class="hero-info">
+                    <h4>Информация о герое:</h4>
+                    <p>Доктор Брюс Беннер превращается в Халка, когда его эмоции, такие как гнев, выходят из-под контроля, что приводит к его превращению в гигантского зеленого монстра.</p>
+                </div>
+                <div class="gallery">
+                    <img src="hulk1.jpg" alt="Халк 1">
+                    <img src="c:\Users\Acer\Desktop\web\hulk2.jpg" alt="Халк 2">
+                </div>
+            </div>
+
+            <!-- Тор -->
+            <div class="hero-card">
+                <img src="thor.jpg" alt="Тор">
+                <h3>Тор</h3>
+                <p>Бог грома и защитник Асгарда.</p>
+                <div class="hero-info">
+                    <h4>Информация о герое:</h4>
+                    <p>Тор, бог грома и молнии, сын Одина. Он сражается за свою родину, Асгард, и защищает мир от всех возможных угроз.</p>
+                </div>
+                <div class="gallery">
+                    <img src="thor1.jpg" alt="Тор 1">
+                    <img src="c:\Users\Acer\Desktop\web\тор.jpeg" alt="Тор 2">
+                </div>
+            </div>
+
+            <!-- Черная Пантера -->
+            <div class="hero-card">
+                <img src="c:\Users\Acer\Desktop\web\panther2.jpg" alt="Черная Пантера">
+                <h3>Черная Пантера</h3>
+                <p>Король Ваканды и герой, защищающий свой народ.</p>
+                <div class="hero-info">
+                    <h4>Информация о герое:</h4>
+                    <p>Т'Чалла, король Ваканды, становится Черной Пантерой, обладая силой и ловкостью благодаря особым травам и технологии своей родины.</p>
+                </div>
+                <div class="gallery">
+                    <img src="c:\Users\Acer\Desktop\web\panther.jpg" alt="Черная Пантера 1">
+                    <img src="c:\Users\Acer\Desktop\web\panther1.jpg" alt="Черная Пантера 2">
+                </div>
+            </div>
+
+            <!-- Доктор Стрендж -->
+            <div class="hero-card">
+                <img src="strange.jpg" alt="Доктор Стрендж">
+                <h3>Доктор Стрендж</h3>
+                <p>Магистр мистических искусств.</p>
+                <div class="hero-info">
+                    <h4>Информация о герое:</h4>
+                    <p>Доктор Стивен Стрендж — нейрохирург, который после травмы руки становится магистром мистических искусств и борется с магическими угрозами.</p>
+                </div>
+                <div class="gallery">
+                    <img src="c:\Users\Acer\Desktop\web\strange2.jpg" alt="Доктор Стрендж 1">
+                    <img src="c:\Users\Acer\Desktop\web\doctor strange.jpg" alt="Доктор Стрендж 2">
+                </div>
+            </div>
+        </div>
+    </section>
+<br>
+<section class="hero-table">
+    <h2>Полная информация о героях Marvel</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Имя героя</th>
+                <th>Настоящее имя</th>
+                <th>Первая появление</th>
+                <th>Суперспособности</th>
+                <th>Команда</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Капитан Америка</td>
+                <td>Стив Роджерс</td>
+                <td>1941</td>
+                <td>Суперсила, выносливость, щит из вибраниума</td>
+                <td>Мстители</td>
+            </tr>
+            <tr>
+                <td>Железный человек</td>
+                <td>Тони Старк</td>
+                <td>1963</td>
+                <td>Высокотехнологичная броня, интеллект</td>
+                <td>Мстители</td>
+            </tr>
+            <tr>
+                <td>Человек-Паук</td>
+                <td>Питер Паркер</td>
+                <td>1962</td>
+                <td>Сверхсила, ловкость, способность лазать по стенам</td>
+                <td>Мстители</td>
+            </tr>
+            <tr>
+                <td>Халк</td>
+                <td>Брюс Беннер</td>
+                <td>1962</td>
+                <td>Сверхсила, неуязвимость, регенерация</td>
+                <td>Мстители</td>
+            </tr>
+            <tr>
+                <td>Тор</td>
+                <td>Тор Одинсон</td>
+                <td>1962</td>
+                <td>Божественная сила, управление молниями, Мьёльнир</td>
+                <td>Мстители</td>
+            </tr>
+            <tr>
+                <td>Черная Пантера</td>
+                <td>Т'Чалла</td>
+                <td>1966</td>
+                <td>Сверхсила, ловкость, высокотехнологичный костюм</td>
+                <td>Мстители</td>
+            </tr>
+            <tr>
+                <td>Доктор Стрендж</td>
+                <td>Стивен Стрендж</td>
+                <td>1963</td>
+                <td>Мистические искусства, манипуляция временем</td>
+                <td>Мстители</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<br><section class="announcements">
+    <h2>Анонсы героев Marvel</h2>
+    <ul>
+        <li><strong>Нова (Nova)</strong> — ожидается сольный проект о Ричарде Райдере, космическом герое, члене корпуса Нова.</li>
+        <li><strong>Мисс Марвел (Камала Хан)</strong> — вернется в фильме "The Marvels" (2024). Юная героиня, обладающая мутагенной силой.</li>
+        <li><strong>Блэйд (Blade)</strong> — перезапуск франшизы с Махершалой Али в главной роли. Охотник на вампиров, полувампир.</li>
+        <li><strong>Чудо-человек (Wonder Man)</strong> — сериал на Disney+ расскажет о Саймоне Уильямсе, сверхчеловеческом актере и герое.</li>
+        <li><strong>Серебряный серфер (Silver Surfer)</strong> — в разработке сольный проект об истории его служения Галактусу.</li>
+        <li><strong>Фантастическая Четверка</strong> — фильм ожидается в 2026 году. Команда: Мистер Фантастик, Невидимая Леди, Человек-Факел и Существо.</li>
+        <li><strong>Секретные Мстители (Thunderbolts)</strong> — фильм об антигероях, таких как Призрак, Красный Страж и Елена Беловая.</li>
+        <li><strong>Ртуть (Quicksilver)</strong> — возможное возвращение Пьетро Максимофф через мультивселенную или флэшбеки.</li>
+        <li><strong>Старфайр (Эрос)</strong> — брат Таноса, впервые показан в "Вечных". Его роль в MCU пока не раскрыта.</li>
+        <li><strong>Ключевые герои мультивселенной</strong> — возвращение Канга Завоевателя и альтернативных версий героев в "Мстителях: Династия Канга" и "Тайные Войны".</li>
+    </ul>
+</section>
+
+
+
+
+
+    <footer class="footer">
+        <p>© 2024 Герои Marvel. Это пример для изучения.</p>
+    </footer>
+</body>
+</html>
